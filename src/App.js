@@ -1,22 +1,22 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			phone: "9849084994"
-		};
-	}
-
-	
 	render() {
 		return (
 			<div>
-				<h1>new class</h1>
+				<ul>
+					{this.props.users.map(user => {
+						return <li key={user._id}>{user.email}</li>;
+					})}
+				</ul>
 			</div>
 		);
 	}
 }
-
-
-export default App;
+const mapStateToProps = state => {
+	return {
+		users: state.users
+	};
+};
+export default connect(mapStateToProps)(App);

@@ -9,7 +9,7 @@ import { startUserApi } from "./actions/users";
 const store = configureStore();
 
 store.subscribe(() => {
-	console.log(store.getState());
+	store.getState();
 });
 
 store.dispatch(startUserApi());

@@ -8,7 +8,7 @@ export const listUsers = users => {
 export const startUserApi = () => {
 	return dispatch => {
 		console.log("start user api");
-		fetch("http://jsonplaceholder.typicode.com/users")
+		fetch("http://localhost:3001/users")
 			.then(response => {
 				return response.json();
 			})
